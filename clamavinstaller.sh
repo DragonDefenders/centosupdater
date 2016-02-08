@@ -30,6 +30,10 @@ if [[ $answerRunScan = y ]] ; then
 	freshclam
 	clamscan -r /etc /home /tmp 
 
+function pause () {
+        read -p "$*"
+}
+
 pause '
 press [Enter] key to exit...
 '
