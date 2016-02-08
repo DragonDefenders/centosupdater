@@ -18,7 +18,7 @@ read -p "would you like to run a scan? [y/n] " answerRunScan
 if [[ $answerDownloadClamav = y ]] ; then
 	cd /home
 	wget https://www.clamav.net/downloads/production/clamav-0.97.3.tar.gz --no-check-certificate
-  cd /home
+	cd /home
 	tar -xzvf clamav-0.97.3.tar.gz
 fi
 
