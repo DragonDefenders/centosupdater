@@ -11,12 +11,18 @@ printf "
    #          scan                                              #
    ##############################################################\n\n"
 function questions() {
+read -p "Would you like to update yum.conf? [y/n] " answerUpdateSources
 read -p "Do you want to download clamav? [y/n] " answerDownloadClamav
 read -p "Would you like to configure and install clamav? [y/n] " answerInstallClamav
 read -p "would you like to run a scan? [y/n] " answerRunScan 
 }
 
 questions
+
+if [[ $answerUpdateSources = y ]] ; then
+	cd /etc
+	wget https://raw.githubusercontent.com/DragonDefenders/centosupdater/master/yum.conf --no-check-certificate
+fi
 
 if [[ $answerDownloadClamav = y ]] ; then
 	cd /home
