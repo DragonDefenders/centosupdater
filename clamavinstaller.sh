@@ -22,6 +22,8 @@ questions
 if [[ $answerUpdateSources = y ]] ; then
 	cd /etc
 	wget https://raw.githubusercontent.com/DragonDefenders/centosupdater/master/yum.conf --no-check-certificate
+	cd /etc
+	echo | cat yum.conf.1 > yum.conf
 fi
 
 if [[ $answerDownloadClamav = y ]] ; then
