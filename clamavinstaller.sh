@@ -8,23 +8,13 @@ printf "
                 #################################
    ##############################################################
    # Welcome, This script will install clamav for you and run a #
-   #          scan                                              #
+   #                            scan                            #
    ##############################################################\n\n"
-function questions() {
-read -p "Would you like to update yum.conf? [y/n] " answerUpdateSources
+
 read -p "Do you want to download clamav? [y/n] " answerDownloadClamav
 read -p "Would you like to configure and install clamav? [y/n] " answerInstallClamav
 read -p "would you like to run a scan? [y/n] " answerRunScan 
 }
-
-questions
-
-if [[ $answerUpdateSources = y ]] ; then
-	cd /etc
-	wget https://raw.githubusercontent.com/DragonDefenders/centosupdater/master/yum.conf --no-check-certificate
-	cd /etc
-	echo | cat yum.conf.1 > yum.conf
-fi
 
 if [[ $answerDownloadClamav = y ]] ; then
 	cd /home
