@@ -15,7 +15,7 @@ read -p "Would you like to run chkrootkit? [y/n] " answerRunChkrootkit
 }
 questions
 
-if [[ $answerInstallYumUpdater = y ]] ; then
+if [[ $answerInstallChkrootkit = y ]] ; then
   wget ftp://ftp.pangeia.com.br/pub/seg/pac/chkrootkit.tar.gz -O /usr/local/src/chkrootkit.tar.gz
   tar xvzf chkrootkit.tar.gz
   cd /usr/local/src/chkrootkit-*
