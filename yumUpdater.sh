@@ -24,7 +24,7 @@ if [[ $answerUpdateSources = y ]] ; then
 fi
 
 if [[ $answerUpdateSources = y ]]; then
-	wget https://dl.fedoraproject.org/pub/epel/4/x86_64/epel-release-4-10.noarch.rpm -O /etc/epel-release-4-10.noarch.rpm
+	wget https://dl.fedoraproject.org/pub/epel/4/x86_64/epel-release-4-10.noarch.rpm --no-check-certificate -O /etc/epel-release-4-10.noarch.rpm
 	rpm -i /etc/epel-release-4-10.narch.rpm
 fi
 
