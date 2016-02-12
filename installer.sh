@@ -13,6 +13,9 @@ function questions() {
 read -p "Would you like to install yumUpdater? [y/n] " answerInstallYumUpdater
 read -p "Do you want to download clamavinstaller? [y/n] " answerInstallClamavInstaller
 read -p "Would you like to update path? [y/n] " answerUpdatePath
+read -p "Would you like to install chkrootkitInstaller? [y/n] " answerChkrootkitInsaller
+read -p "Would you like to install rkhunterInstaller? [y/n] " answerRkhunterInsaller
+read -p "Would you like to install tripwireInstaller? [y/n] " answerTripwireInsaller
 }
 questions
 
@@ -27,6 +30,19 @@ fi
 if [[ $answerUpdatePath = y ]] ; then
 	PATH=$PATH /sbin
 fi
+
+if [[ $answerChkrootkitInsaller ]] ; then
+	wget https://raw.githubusercontent.com/DragonDefenders/centosupdater/master/chkrootkitInstaller.sh --no-check-certificate -O /root/chkrootkitInstaller.sh
+fi
+
+if [[ $answerRkhunterInstaller ]] ; then
+	wget https://raw.githubusercontent.com/DragonDefenders/centosupdater/master/rkhunterInstaller.sh --no-check-certificate -O /root/rkhunterInstaller.sh
+fi
+
+if [[ $answerTripwireInstaller ]] ; then
+	wget https://raw.githubusercontent.com/DragonDefenders/centosupdater/master/tripwireInstaller.sh --no-check-certificate -O /root/tripwireInstaller.sh
+fi
+
 
 function pause () {
         read -p "$*"
