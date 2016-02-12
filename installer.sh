@@ -1,7 +1,7 @@
 #!/bin/bash
 printf "        
                   #############################
-                  # CentOS Clamav Installer   #
+                  # CentOS Script Installer   #
                   #############################
                 #################################
                 #This script MUST be run as root#
